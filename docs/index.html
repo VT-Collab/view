@@ -264,9 +264,9 @@
           </td>
         </tr>
         <div class="is-vcentered interpolation-panel">
-          <div class="content has-text-centered">
+          <div class="content has-text-justified">
             <p style = "font-size: 18px">
-              Outline of VIEW, our proposed method for human-to-robot visual imitation learning. (Top Left) VIEW begins with a single video demonstration of a task. (Bottom Left) From this video we extract the object of interest, its trajectory, and the human's human trajectory. (Middle) We then perform compression to obtain a trajectory prior --- a sequence of waypoints the robot arm should interpolate between to complete the task. Unfortunately, this initial trajectory is often imprecise due to the differences between human hands and robot grippers, as well as noise in the extraction process. We therefore refine the prior using a residual network, which is trained on previous tasks to de-noises the current data. (Right) The de-noised trajectory is then segmented into two phases: grasp exploration and task exploration. (Top Right) During grasp exploration, the robot determines how to pick up the object by modifying the pick point in its trajectory. (Bottom Right) Following a successful grasp, the robot proceeds to task exploration, where is simultaneously corrects the remaining waypoints of the trajectory. After completing exploration, the robot synthesizes a complete trajectory. (Middle) This solved trajectory, alongside the prior trajectory, is used to further train the residual network, thus enhancing the performance of our method in future tasks.
+              Overview of our method VIEW.
             </p>
           </div>
         </div>
@@ -285,9 +285,9 @@
           </td>
         </tr>
         <div class="is-vcentered interpolation-panel">
-          <div class="content has-text-centered">
+          <div class="content has-text-justified">
             <p style = "font-size: 18px">
-              An overview of our prior extraction method (Bottom Left in \fig{method}). Utilizing the 100 Days of Hands ($100$DOH) detector \cite{shan2020understanding}, we first identify the location of the hand and if it is in contact with any objects present in the frame. We then refine the human's hand trajectory using the MANO model \cite{romero2022embodied} to capture wrist movements. Subsequently, to eliminate redundancy, we apply the SQUISHE algorithm \cite{muckell2014compression}. This produces an initial trajectory with key waypoints that the robot should interpolate between. To pinpoint the object of interest amidst potential clutter, we analyze frames where hand-object contact occurs, creating anchor boxes that --- in conjunction with an object detector --- reveal the object the human interacts with most frequently. This identification enables us to construct an accurate object trajectory from the human's video.
+              This is how we do it.
             </p>
           </div>
         </div>
