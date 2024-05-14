@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot name="cardboardbox">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.027991 0.002083 -0.156975' rpy='-2.399431 -0.384769 1.313204'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/cardboardbox/meshes/cardboardbox_bottom.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="-0.0740324902776 -0.0811237850834 -0.051448977489" rpy="0 0 0 "/>
+    <axis xyz="-0.198301481855 -0.918421021344 -0.342314694174"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="-0.0717372663721 0.0322477431981 -0.0446385694863" rpy="0.73426158124 0.29745199739 -1.75622285427"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.070089 0.045651 -0.109497' rpy='-1.790975 -0.022628 3.089036'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/cardboardbox/meshes/cardboardbox_top.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>

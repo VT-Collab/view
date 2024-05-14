@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<robot name="ikeasmall">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.324047 0.127240 -0.485032' rpy='0.000000 -0.000000 -0.091336'/>
+      <geometry>
+        <mesh filename="meshes/ikeasmall_base.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz='0.324047 0.127240 -0.485032' rpy='0.000000 -0.000000 -0.091336'/>
+      <geometry>
+        <mesh filename="meshes/ikeasmall_base.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="100"/>
+      <inertia ixx="100.0" ixy="0.0" ixz="0.0" iyy="100.0" iyz="0.0" izz="100.0"/>
+    </inertial>
+
+  </link>
+  <joint name="j_0_1" type="prismatic">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.317014452934 -0.101373072037 -0.284843132653" rpy="0 0 0 "/>
+    <axis xyz="0.99741799277 -0.0701691584626 0.0152851855914"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.56799789129 -0.0112948134925 0.0829534640087"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_2" type="prismatic">
+    <parent link="rb0"/>
+    <child link="rb2"/>
+    <origin xyz="0.384509556453 0.267281678977 -0.161581733779" rpy="0 0 0 "/>
+    <axis xyz="0.997356190876 -0.0721533805237 0.00863239250564"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_fixed" type="fixed">
+    <parent link="rb2"/>
+    <child link="rb2_marker"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0587565669364 -0.878115133503 -2.88162905702"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='0.047580 0.036959 0.195131' rpy='1.571474 0.183522 0.000124'/>
+      <geometry>
+        <mesh filename="meshes/ikeasmall_lower.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.047580 0.036959 0.195131' rpy='1.571474 0.183522 0.000124'/>
+      <geometry>
+        <mesh filename="meshes/ikeasmall_lower.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+
+  </link>
+  <link name ="rb2">
+
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+
+  </link>
+  <link name ="rb2_marker">
+    <visual>
+      <origin xyz='0.083138 0.151648 -0.047187' rpy='0.463764 -0.786860 2.560854'/>
+      <geometry>
+        <mesh filename="meshes/ikeasmall_upper.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.083138 0.151648 -0.047187' rpy='0.463764 -0.786860 2.560854'/>
+      <geometry>
+        <mesh filename="meshes/ikeasmall_upper.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+
+  </link>
+</robot>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot name="ikeasmall">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.365970 0.123400 -0.462693' rpy='-0.000000 -0.061733 -0.091336'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/ikeasmall/meshes/ikeasmall_base.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_0_1" type="prismatic">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="0.349923420025 -0.109281488364 -0.266262001081" rpy="0 0 0 "/>
+    <axis xyz="0.994444649275 -0.0624923709703 0.0847026746844"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-1.58284736009 -0.0797184514662 0.0969388817322"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_2" type="prismatic">
+    <parent link="rb0"/>
+    <child link="rb2"/>
+    <origin xyz="0.419878710056 0.193446882275 -0.134174019489" rpy="0 0 0 "/>
+    <axis xyz="0.994785424766 -0.0675467501533 0.0764159356174"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_1_fixed" type="fixed">
+    <parent link="rb2"/>
+    <child link="rb2_marker"/>
+      <origin xyz="0.0 0.0 0.0" rpy="-0.0843180031158 0.872323502358 0.245821828321"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='0.047580 0.036959 0.195131' rpy='1.571474 0.183522 0.000124'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/ikeasmall/meshes/ikeasmall_lower.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+  <link name ="rb2">
+  </link>
+  <link name ="rb2_marker">
+    <visual>
+      <origin xyz='-0.078137 -0.083324 -0.051787' rpy='0.527146 -0.831256 -0.614039'/>
+      <geometry>
+        <mesh filename="package://articulated_objects_db/data/objects/ikeasmall/meshes/ikeasmall_upper.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+  </link>
+</robot>

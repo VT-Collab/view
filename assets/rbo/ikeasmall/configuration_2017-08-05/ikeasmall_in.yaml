@@ -1,0 +1,9 @@
+name: ikeasmall
+base_marker: "/CreditCardWith4Markers"
+link_name_prefix: "rb"
+link_ids: {4: "0", 2: "1", 1: "2" }
+joints:
+- {rb1_id: 4, rb2_id: 2, type: PRISMATIC}
+- {rb1_id: 4, rb2_id: 1, type: PRISMATIC}
+meshes: {"rb0": "ikeasmall/meshes/ikeasmall_base.dae", "rb1": "ikeasmall/meshes/ikeasmall_lower.dae", "rb2": "ikeasmall/meshes/ikeasmall_upper.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.365970 0.123400 -0.462693' rpy='-0.000000 -0.061733 -0.091336'/>", "rb1": "<origin xyz='0.047580 0.036959 0.195131' rpy='1.571474 0.183522 0.000124'/>", "rb2": "<origin xyz='-0.078137 -0.083324 -0.051787' rpy='0.527146 -0.831256 -0.614039'/>"}

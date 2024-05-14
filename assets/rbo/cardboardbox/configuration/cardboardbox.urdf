@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot name="cardboardbox">
+  <link name ="rb0">
+    <visual>
+      <origin xyz='0.037667 0.010293 -0.169514' rpy='-2.514053 -0.324703 1.431376'/>
+      <geometry>
+        <mesh filename="meshes/cardboardbox_bottom.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+     <collision>
+      <origin xyz='0.037667 0.010293 -0.169514' rpy='-2.514053 -0.324703 1.431376'/>
+      <geometry>
+        <mesh filename="meshes/cardboardbox_bottom.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+  <joint name="j_0_1" type="revolute">
+    <parent link="rb0"/>
+    <child link="rb1"/>
+    <origin xyz="-0.0615841466421 -0.0775216691405 -0.0586552473718" rpy="0 0 0 "/>
+    <axis xyz="0.149107285032 0.920712529679 0.360632021932"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <joint name="j_0_fixed" type="fixed">
+    <parent link="rb1"/>
+    <child link="rb1_marker"/>
+      <origin xyz="-0.0594711418973 0.0346995147075 -0.0624429037197" rpy="1.00147710701 0.315600627265 -1.6846440587"/>
+    <limit effort="30" velocity="1.0" lower="-3.1416" upper="3.1416"/>
+  </joint>
+  <link name ="rb1">
+  </link>
+  <link name ="rb1_marker">
+    <visual>
+      <origin xyz='-0.054889 0.057476 -0.114443' rpy='-1.958043 0.012849 3.102324'/>
+      <geometry>
+        <mesh filename="meshes/cardboardbox_top.obj"  scale="1 1 1" />
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz='-0.054889 0.057476 -0.114443' rpy='-1.958043 0.012849 3.102324'/>
+      <geometry>
+        <mesh filename="meshes/cardboardbox_top.obj"  scale="1 1 1" />
+      </geometry>
+    </collision>
+
+  </link>
+</robot>

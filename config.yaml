@@ -1,0 +1,58 @@
+---
+explorer_BO:
+  LIMITS: !!float 0.35
+  UTILITY: 'ucb'
+  KAPPA: !!float 10.0
+  XI: !!float 1e-1
+  K_DECAY: !!float 0.9
+  K_DECAY_DELAY: !!int 5
+
+explorer_CE:
+  LIMITS: !!float 0.25
+  N_CELLS: !!int 100
+  BATCH_SIZE: !!int 1
+  SIGMA: !!float 0.05
+  P_EXPLORE: !!float 1.0
+  ALPHA: !!float 0.05
+  GAMMA: !!float 10
+
+residual_policy:
+  EPOCHS: 1000
+  LR: !!float 1e-4
+  BATCH: !!int 5
+  N_SAMPLES: !!int 50
+
+training:
+  R_THRESH_CE: !!float -0.07 
+  R_THRESH_BO: !!float -0.085   # must be negative
+  EPSILON: !!float 1.2
+  TIMESCALE: !!float 1.0
+  N_ROLLOUTS: !!int 100
+  INPUT_DIM: 3
+  BATCH_SIZE: 10
+
+save_data:
+  RESULTS: 'data/results/'
+  ROLLOUTS: 'data/rollouts/'
+  # LOGS: 'data/logs/'
+  MODELS: 'data/models/'
+  LOSS: 'data/models/loss/'
+  CHECKPOINTS: 'data/models/checkpoints/'
+  DEBUG: 'data/debug/'
+  DEMOS: 'data/demos/'
+
+squishe:
+  MU: 0.25
+  LAMDA: 1.0
+
+env:
+  SIZE: !!int 3
+  LIMIT_X:
+    - !!float 0.1
+    - !!float 0.7
+  LIMIT_Y:
+    - !!float -0.5
+    - !!float 0.5
+  LIMIT_Z:
+    - !!float 0.68
+    - !!float 1.6

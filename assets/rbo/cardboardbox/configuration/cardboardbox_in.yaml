@@ -1,0 +1,8 @@
+name: cardboardbox
+base_marker: "/TransparentBoxWith4Markers"
+link_name_prefix: "rb"
+link_ids: {1: "0", 4: "1"}
+joints:
+- {rb1_id: 1, rb2_id: 4, type: REVOLUTE}
+meshes: {"rb0": "cardboardbox/meshes/cardboardbox_bottom.dae", "rb1": "cardboardbox/meshes/cardboardbox_top.dae"}
+mesh_poses: {"rb0": "<origin xyz='0.037667 0.010293 -0.169514' rpy='-2.514053 -0.324703 1.431376'/>", "rb1": "<origin xyz='-0.054889 0.057476 -0.114443' rpy='-1.958043 0.012849 3.102324'/>"}
