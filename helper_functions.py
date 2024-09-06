@@ -370,7 +370,7 @@ def simulate(args, traj, object_of_interest, verbose=False):
         
         robot_state, _,_, info = sim.step(action)
         while not grip == robot_state[-1]: # wait for gripper to open/close
-            robot_state, _,_, info = sim.step(action)
+            robot_state, _,_, _, info = sim.step(action)
         state = np.hstack((robot_state[:3], robot_state[-1]))
         object_state = np.array(info['object_positions'][object_of_interest][:3]) # remove orientation of object
 

@@ -114,7 +114,7 @@ if __name__ == "__main__":
                 grip = target[-1]
                 action = np.hstack((linear, angular, [grip]))
                 
-                robot_state, _,_, info = sim.step(action)
+                robot_state, _, _,_, info = sim.step(action)
                 state = np.hstack((robot_state[:3], robot_state[-1]))
                 object_state = np.array(info['object_positions'][object_of_interest][:3]).squeeze() # remove orientation of object
 
