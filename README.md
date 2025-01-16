@@ -1,1 +1,1 @@
-Intructions coming soon!
+Instructions coming soon!
